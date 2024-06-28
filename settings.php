@@ -186,71 +186,10 @@ if ($stmt->rowCount() > 0) {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 }
 ?>
-<html lang="fr" data-bs-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Panel</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand ml-2">Panel</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav" >
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Général</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#server-info-settings">Serveur</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#loader-settings">Loader</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#rpc-settings">Discord RPC</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#splash-settings">Splash</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#changelog-settings">Changelog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#maintenance-settings">Maintenance</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#whitelist-settings">Whitelist</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#ignored-folders-settings">Dossiers Ignorés</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#roles-settings">Fond d'écran par rôle</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0 ml-auto" method="post" action="">
-            <button class="btn btn-outline-light" type="submit" name="logout">Déconnexion</button>
-            <a class="btn btn-outline-light" name="export" href="./utils/export">Exporter</a>
-        </form>
-        <form id="importForm" class="form-inline my-2 my-lg-0 ml-auto" method="post" action="utils/import.php" enctype="multipart/form-data">
-    <label class="btn btn-outline-light">
-        Importer
-        <input type="file" id="jsonFileInput" name="json_file" style="display:none;" accept=".json" required>
-    </label>
-</form>
+<?php
+require_once './ui/header.php';
+?>
 
-<script>
-    document.getElementById('jsonFileInput').addEventListener('change', function() {
-        document.getElementById('importForm').submit();
-    });
-</script>
-        </div>
-    </nav>
     <div class="container mt-5">
     <div class="row">
         <div class="col-md-12">
@@ -541,10 +480,6 @@ if ($stmt->rowCount() > 0) {
         </div>
     </div>
                         
-    <div class="footer mt-5">Créé avec ❤️ par Riptiaz | discord.gg/VCmNXHvf77</div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+    <?php
+require_once './ui/footer.php';
+?>
