@@ -99,12 +99,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100">
-    <div class="container mx-auto mt-20">
+<body class="bg-gray-900 text-white">
+    <div class="container mx-auto mt-20 p-6 bg-gray-900 text-white  rounded-lg ">
         <div class="flex justify-center">
             <div class="w-full max-w-md">
-                <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                    <h2 class="text-2xl mb-4 text-center	">Connexion au Panel</h2>
+                <div class="bg-gray-800 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-100 border-b border-gray-600 pb-2 text-center">Connexion au Panel</h2>
                     <?php if (!empty($errors)) : ?>
                     <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
                         <?php foreach ($errors as $error) : ?>
@@ -113,32 +113,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                     <?php endif; ?>
                     <form method="post" action="">
-                        <div class="mb-4">
-                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Adresse email</label>
+                        <div class="mb-6">
+                            <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Adresse email</label>
                             <div class="relative">
-                                <input type="email" name="email"
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                    placeholder="MonEmail@exemple.com" required>
+                                <input type="email" name="email" class="form-input mt-1 block w-full rounded-lg border-gray-600 bg-gray-700 text-gray-200 p-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="MonEmail@exemple.com" required>
                                 <i class="bi bi-envelope-fill absolute right-3 top-2.5 text-gray-400"></i>
                             </div>
                         </div>
                         <div class="mb-6">
-                            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Mot de
-                                passe</label>
+                            <label for="password" class="block text-sm font-medium text-gray-400 mb-2">Mot de passe</label>
                             <div class="relative">
-                                <input id="password" type="password" name="password"
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                                    required>
+                                <input id="password" type="password" name="password" class="form-input mt-1 block w-full rounded-lg border-gray-600 bg-gray-700 text-gray-200 p-2 focus:ring-indigo-500 focus:border-indigo-500" required>
                                 <i class="bi bi-lock-fill absolute right-10 top-2.5 text-gray-400"></i>
-                                <i id="togglePassword"
-                                    class="bi bi-eye-fill absolute right-3 top-2.5 cursor-pointer text-gray-400"></i>
+                                <i id="togglePassword" class="bi bi-eye-fill absolute right-3 top-2.5 cursor-pointer text-gray-400"></i>
                             </div>
                         </div>
 
                         <div class="flex items-center justify-center">
-                            <button type="submit" name="submit"
-                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                                Se connecter
+                            <button type="submit" name="submit" class="bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+                                <i class="bi bi-save"></i> Se connecter
                             </button>
                         </div>
 
@@ -148,8 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfQWIglAAAAAEzTj18fKpd0udB2MBkUojHnRr3p">
-    </script>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfQWIglAAAAAEzTj18fKpd0udB2MBkUojHnRr3p"></script>
     <script>
     const togglePassword = document.querySelector('#togglePassword');
     const password = document.querySelector('#password');
