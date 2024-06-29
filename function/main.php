@@ -6,7 +6,7 @@
     <h2 class="text-3xl font-bold mb-6 text-gray-100 border-b border-gray-600 pb-2">Général</h2>
     <div class="mb-6">
         <label for="azuriom" class="block text-sm font-medium text-gray-400 mb-2">URL du site Azuriom :</label>
-        <input type="text" class="form-input mt-1 block w-full rounded-lg border-gray-600 bg-gray-700 text-gray-200 p-2 focus:ring-indigo-500 focus:border-indigo-500" id="azuriom" name="azuriom" value="<?php echo $row['azuriom']; ?>">
+        <input type="text" class="form-input mt-1 block w-full rounded-lg border-gray-600 bg-gray-700 text-gray-200 p-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="https://monsite.com" id="azuriom" name="azuriom" value="<?php echo $row['azuriom']; ?>">
         <div class="mt-4 flex items-center">
             <button id="test-url" class="bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">Tester l'URL</button>
             <p id="url-result" class="ml-4 text-sm text-gray-400"></p>
