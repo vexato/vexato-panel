@@ -7,4 +7,4 @@ $databaseConfig = [
     'password' => 'rp3',
 ];
 
-?>
+?>fff

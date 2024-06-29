@@ -1,6 +1,7 @@
 <?php
 // update/update.php
 include 'version.php';
+include 'check_update.php';
 
 function downloadAndExtract($url, $path) {
     $zipFile = "$path/update.zip";
@@ -18,14 +19,14 @@ function downloadAndExtract($url, $path) {
 }
 
 function updateVersionFile($newVersion) {
-    file_put_contents('update/version.php', "<?php\n\$currentVersion = '$newVersion';\nfunction getCurrentVersion() { return \$GLOBALS['currentVersion']; }\n");
+    file_put_contents('version.php', "<?php\n\$currentVersion = '$newVersion';\nfunction getCurrentVersion() { return \$GLOBALS['currentVersion']; }\n");
 }
 
 $repoOwner = 'vexato';
 $repoName = 'vexato-panel';
 $latestVersion = getLatestReleaseVersion();
 
-$url = "https://github.com/$repoOwner/$repoName/archive/refs/tags/$latestVersion.zip";
+$url = "https://github.com/$repoOwner/$repoName/releases/download/$latestVersion/update.zip";
 $path = __DIR__; // Le répertoire actuel de votre panel
 
 if (downloadAndExtract($url, $path)) {

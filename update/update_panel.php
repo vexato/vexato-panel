@@ -7,7 +7,7 @@
     <title>Update Panel</title>
     <script>
         function checkForUpdates() {
-            fetch('update/check_update.php')
+            fetch('check_update.php')
                 .then(response => response.json())
                 .then(data => {
                     if (data.status === 'update_available') {
@@ -21,7 +21,7 @@
         }
 
         function applyUpdates() {
-            fetch('update/update.php')
+            fetch('update.php')
                 .then(response => response.json())
                 .then(data => {
                     if (data.status === 'update_successful') {
