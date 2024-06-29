@@ -224,17 +224,14 @@ require_once './function/whitelist.php';
 
 
 
-    <?php
-require_once './function/ignore.php';
-?>
+    
     <?php
 require_once './function/roles.php';
 ?>
+<?php
+require_once './function/ignore.php';
+?>
 
-</div>
-</div>
-</div>
 
 <?php
 require_once './ui/footer.php';
-?>

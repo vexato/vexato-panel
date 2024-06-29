@@ -1,7 +1,7 @@
-<div class="footer mt-5">Créé avec ❤️ par Riptiaz | discord.gg/VCmNXHvf77</div>
+<div class="footer mt-5 bg-gray-800 text-gray-300 py-4 text-center">
+    Créé avec ❤️ par Riptiaz | UI par Vexato | <a href="https://discord.gg/VCmNXHvf77" class="underline" target="_blank">discord.gg/VCmNXHvf77</a>
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>

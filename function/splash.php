@@ -1,21 +1,21 @@
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-12">
+<div class="container mx-auto mt-10 p-6 bg-gray-900 text-white border border-gray-700 rounded-lg shadow-lg">
+    <div class="grid grid-cols-1 gap-6">
+        <div>
             <form method="post" action="settings#splash-settings">
                 <div id="splash-settings">
-                    <h2>Paramètres du Splash</h2>
-                    <div class="form-group">
-                        <label for="splash">Message Splash :</label>
-                        <input type="text" class="form-control" id="splash" name="splash"
-                            value="<?php echo $row["splash"]; ?>">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-100 border-b border-gray-600 pb-2">Paramètres du Splash</h2>
+                    <div class="mb-6">
+                        <label for="splash" class="block text-sm font-medium text-gray-400 mb-2">Message Splash :</label>
+                        <input type="text" class="form-input mt-1 block w-full rounded-lg border-gray-600 bg-gray-700 text-gray-200 p-2 focus:ring-indigo-500 focus:border-indigo-500" id="splash" name="splash" value="<?php echo $row['splash']; ?>">
                     </div>
-                    <div class="form-group">
-                        <label for="splash_author">Auteur du Splash :</label>
-                        <input type="text" class="form-control" id="splash_author" name="splash_author"
-                            value="<?php echo $row["splash_author"]; ?>">
+                    <div class="mb-6">
+                        <label for="splash_author" class="block text-sm font-medium text-gray-400 mb-2">Auteur du Splash :</label>
+                        <input type="text" class="form-input mt-1 block w-full rounded-lg border-gray-600 bg-gray-700 text-gray-200 p-2 focus:ring-indigo-500 focus:border-indigo-500" id="splash_author" name="splash_author" value="<?php echo $row['splash_author']; ?>">
                     </div>
                 </div>
-                <input type="submit" class="btn btn-primary mt-3" name="submit_splash_info" value="Enregistrer">
+                <button type="submit" name="submit_splash_info" class="mt-6 px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75">
+                    <i class="bi bi-save"></i> Enregistrer
+                </button>
             </form>
         </div>
     </div>
