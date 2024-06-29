@@ -1,73 +1,74 @@
 <!DOCTYPE html>
-<html lang="fr" data-bs-theme="dark">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Panel</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-900 text-white">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand ml-2" href="#">Panel</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+<body class="bg-gray-800 text-white">
+    <nav class="bg-gray-900 p-4 fixed w-full z-10 top-0 shadow">
+        <div class="container mx-auto flex flex-wrap items-center justify-between">
+            <a class="text-xl font-bold" href="#">Panel</a>
+            <button class="text-white lg:hidden" id="nav-toggle">
+                <i class="bi bi-list"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mr-auto">
+            <div class="w-full lg:flex lg:items-center lg:w-auto hidden lg:block" id="nav-content">
+                <ul class="lg:flex lg:justify-between text-sm">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Général</a>
+                        <a class="block lg:inline-block px-4 py-2" href="#">Général</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#server-info-settings">Serveur</a>
+                        <a class="block lg:inline-block px-4 py-2" href="#server-info-settings">Serveur</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#loader-settings">Loader</a>
+                        <a class="block lg:inline-block px-4 py-2" href="#loader-settings">Loader</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#rpc-settings">Discord RPC</a>
+                        <a class="block lg:inline-block px-4 py-2" href="#rpc-settings">Discord RPC</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#splash-settings">Splash</a>
+                        <a class="block lg:inline-block px-4 py-2" href="#splash-settings">Splash</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#changelog-settings">Changelog</a>
+                        <a class="block lg:inline-block px-4 py-2" href="#changelog-settings">Changelog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#maintenance-settings">Maintenance</a>
+                        <a class="block lg:inline-block px-4 py-2" href="#maintenance-settings">Maintenance</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#whitelist-settings">Whitelist</a>
+                        <a class="block lg:inline-block px-4 py-2" href="#whitelist-settings">Whitelist</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#ignored-folders-settings">Dossiers Ignorés</a>
+                        <a class="block lg:inline-block px-4 py-2" href="#ignored-folders-settings">Dossiers Ignorés</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#roles-settings">Fond d'écran par rôle</a>
+                        <a class="block lg:inline-block px-4 py-2" href="#roles-settings">Fond d'écran par rôle</a>
                     </li>
                 </ul>
-                <form class="d-flex ml-auto" method="post" action="">
-                    <button class="btn btn-outline-light mr-2" type="submit" name="logout">Déconnexion</button>
-                    <a class="btn btn-outline-light mr-2" name="export" href="./utils/export">Exporter</a>
-                </form>
-                <form id="importForm" class="d-flex ml-auto" method="post" action="utils/import.php" enctype="multipart/form-data">
-                    <label class="btn btn-outline-light mr-2">
-                        Importer
-                        <input type="file" id="jsonFileInput" name="json_file" style="display:none;" accept=".json" required>
-                    </label>
-                </form>
+                <div class="flex items-center space-x-4 mt-4 lg:mt-0">
+                    <form class="flex items-center" method="post" action="">
+                        <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" type="submit" name="logout">Déconnexion</button>
+                    </form>
+                    <a class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="./utils/export">Exporter</a>
+                    <form id="importForm" method="post" action="utils/import.php" enctype="multipart/form-data">
+                        <label class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
+                            Importer
+                            <input type="file" id="jsonFileInput" name="json_file" class="hidden" accept=".json" required>
+                        </label>
+                    </form>
+                </div>
             </div>
         </div>
     </nav>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.getElementById('jsonFileInput').addEventListener('change', function() {
             document.getElementById('importForm').submit();
         });
+        document.getElementById('nav-toggle').addEventListener('click', function() {
+            var navContent = document.getElementById('nav-content');
+            navContent.classList.toggle('hidden');
+        });
     </script>
-</body>
-</html>

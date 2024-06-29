@@ -2,7 +2,7 @@
 
 $databaseConfig = [
     'host' => 'localhost',
-    'dbname' => 'armaz',
+    'dbname' => 'dev',
     'username' => 'rp3',
     'password' => 'rp3',
 ];

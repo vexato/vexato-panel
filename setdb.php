@@ -12,7 +12,7 @@
     <h1 id="config-title" class="mt-5 mb-4">Configuration de la base de données</h1>
 
     <?php
-    $configFilePath = 'config.php';
+    $configFilePath = './conn.php';
 
     if (!file_exists($configFilePath)) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
