@@ -59,16 +59,60 @@
                             <input type="file" id="jsonFileInput" name="json_file" class="hidden" accept=".json" required>
                         </label>
                     </form>
+                        <button id="updateButton" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Update</button>
                 </div>
             </div>
         </div>
     </nav>
+    <div id="updateOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden"></div>
+    <div id="updatePopup" class="fixed inset-0 bg-gray-700 p-4 rounded shadow-lg w-1/3 mx-auto mt-20 hidden">
+    <div class="flex flex-col items-center justify-center h-full">
+        <div class="text-center">
+            <h2 class="text-xl font-bold mb-4">Mise à jour du système</h2>
+            <p id="updateMessage" class="mb-4">Voulez-vous vraiment mettre à jour le système ?</p>
+            <div class="flex justify-center">
+                <button id="confirmUpdateButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2">Oui</button>
+                <button id="cancelUpdateButton" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Non</button>
+            </div>
+        </div>
+    </div>
+</div>
     <script>
         document.getElementById('jsonFileInput').addEventListener('change', function() {
             document.getElementById('importForm').submit();
         });
+
         document.getElementById('nav-toggle').addEventListener('click', function() {
             var navContent = document.getElementById('nav-content');
             navContent.classList.toggle('hidden');
         });
+
+        document.getElementById('updateButton').addEventListener('click', function() {
+        document.getElementById('updateOverlay').classList.remove('hidden');
+        document.getElementById('updatePopup').classList.remove('hidden');
+        });
+
+        document.getElementById('cancelUpdateButton').addEventListener('click', function() {
+        document.getElementById('updateOverlay').classList.add('hidden');
+        document.getElementById('updatePopup').classList.add('hidden');
+        });
+
+        document.getElementById('confirmUpdateButton').addEventListener('click', function() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'update/update.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = JSON.parse(xhr.responseText);
+                document.getElementById('updateMessage').innerText = response.message;
+            if (response.success) {
+                document.getElementById('confirmUpdateButton').style.display = 'none';
+            }
+            }
+        };
+        xhr.send('update_button=1');
+        });
+
     </script>
+</body>
+</html>
