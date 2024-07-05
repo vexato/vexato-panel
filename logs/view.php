@@ -32,7 +32,7 @@ if (isset($_SESSION['user_token'])) {
 ?>
 
 <?php
-require_once '../ui/header.php';
+require_once '../ui/header3.php';
 ?>
 
 
