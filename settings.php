@@ -308,6 +308,20 @@ if ($stmt->rowCount() > 0) {
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
     </svg>
 </a>
+<style>
+    .scroll-to-down {
+        position: fixed;
+        bottom: 2rem;
+        right: 6rem;
+        z-index: 10;
+    }
+</style>
+<a href="#footer" class="scroll-to-down bg-blue-900 hover:bg-blue-600 text-white py-2 px-4 rounded-full shadow-lg transition duration-300 ease-in-out">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block align-middle" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+</svg>
+
+</a>
 
 <?php require_once './function/main.php'; ?>
 <?php require_once './function/serveur.php'; ?>

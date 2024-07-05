@@ -1,19 +1,15 @@
 <div class="container mx-auto mt-10 p-6 bg-gray-900 text-white border border-gray-700 rounded-lg shadow-lg">
     <div class="grid grid-cols-1 gap-6">
         <div id="autre-settings">
-            <h2 class="text-3xl font-bold mb-6 text-gray-100 border-b border-gray-600 pb-2">autre OUTILS</h2>
-            <a class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="./logs/view">LOGS</a>
-            <a class="bg-green-800 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" href="file">fichiers
-                (dossier "data")</a>
-            <a id="newUser" href='account/new/register'
-                class="bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Ajouter
-                un nouvel utilisateur</a>
-
-            <button id="updateButton"
-                class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Update</button>
+            <h2 class="text-3xl font-bold mb-6 text-gray-100 border-b border-gray-600 pb-2">Autres OUTILS</h2>
+            <a class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4" href="./logs/view">LOGS</a>
+            <a class="bg-green-800 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-4" href="file">Fichiers (dossier "data")</a>
+            <a id="newUser" href='account/new/register' class="bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-4">Ajouter un nouvel utilisateur</a>
+            <button id="updateButton" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mb-4">Update</button>
         </div>
     </div>
 </div>
+
 
 
 <div id="updateOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden"></div>
