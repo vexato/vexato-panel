@@ -1,10 +1,10 @@
 <?php
 
 $databaseConfig = [
-    'host' => 'localhost',
-    'dbname' => 'dev',
-    'username' => 'rp3',
-    'password' => 'rp3',
+    'host' => 'localhost:3306',
+    'dbname' => 'panel',
+    'username' => 'panel',
+    'password' => 'panel',
 ];
 
 ?>
